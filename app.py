@@ -3,6 +3,10 @@ from flask import Flask, request, render_template, jsonify, url_for, json
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return render_template("index.html")
+
 @app.route("/issuer")
 def index():
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
